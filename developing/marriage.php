@@ -16,10 +16,17 @@ class m implements Plugin{
 	}
 	
 	public function init(){
+		if(is_dir("./plugins/Marriage/".$this->api->getProperty("level-name")) === false){
+			mkdir("./plugins/Marriage/".$this->api->getProperty("level-name"), 0777, true);
+		}
+		$this->createConfig($this, array(
+		//여기에부부목록이랑아기목록써놓도록할수있게... 
+                ));
+
 		$this->api->console->register("marriage", "command that covers most of the marriage", array($this, "handleCommand"));
                 $this->api->console->alias("accept", "marriage");
                 $this->api->console->alias("decline", "marriage");
-                $this->api->console->alias("", "marriage");
+                $this->api->console->alias("devorce", "marriage");
 		$this->api->console->alias("baby", "marriage");
 	}
 	
@@ -29,8 +36,7 @@ class m implements Plugin{
 	
 	public function handleCommand($cmd, $arg){
 		switch($cmd){
-			case "example":
-				console("EXAMPLE!!!");
+			case "marriage":
 				break;
 				/*
 
