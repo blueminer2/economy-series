@@ -3,7 +3,7 @@
 /*
  __PocketMine Plugin__
 name=ChestShop
-description=You can run your chest shop and purchase from others' chest shop.
+description=You can run your chest shop and purchase from others' chestshop 
 version=1.3
 author=MinecrafterJPN
 class=ChestShop
