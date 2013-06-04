@@ -7,10 +7,10 @@ description=ec0n0my pluigin is a economy plugin
 version=0.0.2
 author=miner of MCPEKOREA
 class=economy
-apiversion=4,5,6
+apiversion=7
 */
 
-define(DEFAULT_MONEY, 30);
+define('DEFAULT_MONEY', 100);
 
 class economy implements Plugin{
 	private $api, $path;
