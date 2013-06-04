@@ -17,7 +17,10 @@ class m implements Plugin{
 	
 	public function init(){
 		$this->api->console->register("marriage", "command that covers most of the marriage", array($this, "handleCommand"));
-		$this->api->console->alias("baby", "");
+                $this->api->console->alias("accept", "marriage");
+                $this->api->console->alias("decline", "marriage");
+                $this->api->console->alias("", "marriage");
+		$this->api->console->alias("baby", "marriage");
 	}
 	
 	public function __destruct(){
@@ -29,6 +32,14 @@ class m implements Plugin{
 			case "example":
 				console("EXAMPLE!!!");
 				break;
+				/*
+
+
+                                돈핸들러사용법
+                                $this->api->handle("money.handle", $d);
+
+
+				*/
 		}
 	}
 
