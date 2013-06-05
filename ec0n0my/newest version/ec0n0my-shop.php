@@ -2,12 +2,11 @@
 
 /*
  __PocketMine Plugin__
-name=ChestShop
-description=You can run your chest shop and purchase from others' chestshop 
+name=Ec0n0my-shop
 version=1.3
-author=MinecrafterJPN
+author=miner of mcpekorea
 class=ChestShop
-apiversion=4,5,6
+apiversion=7
 */
 
 define(CHEST_SLOTS, 27);
@@ -101,7 +100,7 @@ class ChestShop implements Plugin
 								if($shopInfo === false) break;
 								if($shopInfo['shopOwner'] === $data['player']->username)
 								{
-									$this->api->chat->sendTo(false, "[ChestShop]Cannot purchase from your own shop.", $data['player']->username);
+									$this->api->chat->sendTo(false, "[ec0n0my-shop]Cannot purchase from your own shop.", $data['player']->username);
 									break;
 								}
 								$this->startTransaction($data, $shopInfo, $c);
@@ -113,7 +112,7 @@ class ChestShop implements Plugin
 									{
 										if($val['shopOwner'] !== $data['player']->username)
 										{
-											$this->api->chat->sendTo(false, "[ChestShop]This sign is protected.", $data['player']->username);
+											$this->api->chat->sendTo(false, "[ec0n0my-shop]This sign is protected.", $data['player']->username);
 											return false;
 										}
 									}
@@ -172,10 +171,10 @@ class ChestShop implements Plugin
 
 	private function startTransaction($data, $shopInfo, $c)
 	{
-		if(!file_exists("./plugins/PocketMoney/config.yml"))
+		if(!file_exists("./plugins/ec0n0my/config.yml"))
 		{
-			$this->api->chat->sendTo(false, "[ChestShop][Error]PocketMoney plugin has not been loaded.", $data['player']->username);
-			console("[ChestShop][Error]PocketMoney plugin has not been loaded.");
+			$this->api->chat->sendTo(false, "[ec0n0my-shop][Error]ec0n0my plugin has not been loaded.", $data['player']->username);
+			console("[ec0n0my-shop][Error]PocketMoney plugin has not been loaded.");
 			return;
 		}
 		$d = array('username' => $data['player']->username);
@@ -183,7 +182,7 @@ class ChestShop implements Plugin
 		if(buyerMoney === false) return;
 		if($buyerMoney < $shopInfo['price'])
 		{
-			$this->api->chat->sendTo(false, "[ChestShop]Your money is not enough.", $data['player']->username);
+			$this->api->chat->sendTo(false, "[ec0n0my-shop]Your money is not enough.", $data['player']->username);
 			return;
 		}
 		$chestTiles = $this->api->tileentity->get($c->x, $c->y, $c->z);
@@ -199,8 +198,8 @@ class ChestShop implements Plugin
 		}
 		if($saleNum < $shopInfo['saleNum'])
 		{
-			$this->api->chat->sendTo(false, "[ChestShop]The stock is not enough.", $data['player']->username);
-			$this->api->chat->sendTo(false, "[ChestShop]Please notify the owner of the lack.", $data['player']->username);
+			$this->api->chat->sendTo(false, "[ec0n0my-shop]The stock is not enough.", $data['player']->username);
+			$this->api->chat->sendTo(false, "[ec0n0my-shop]Please notify the owner of the lack.", $data['player']->username);
 			return;
 		}
 		$cmd = "give";
@@ -209,7 +208,7 @@ class ChestShop implements Plugin
 		$alias = false;
 		$this->api->block->commandHandler($cmd, $params, $issuer, $alias);
 		$tmpNum = $shopInfo['saleNum'];
-		for ($i = 0; $i < CHEST_SLOTS; $i++) 
+		for ($i = 0; $i < CHEST_SLOTS; $i++)
 		{
 			$item = $chest->getSlot($i);
 			if($item->getID() === $shopInfo['productID'])
@@ -239,7 +238,7 @@ class ChestShop implements Plugin
 				'amount' => $shopInfo['price']
 		);
 		$this->api->handle("money.handle", $d);
-		$this->api->chat->sendTo(false, "[ChestShop]Completed the transaction.", $data['player']->username);
+		$this->api->chat->sendTo(false, "[ec0n0my-shop]Completed the transaction.", $data['player']->username);
 		return;
 	}
 
