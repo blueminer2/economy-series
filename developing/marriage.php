@@ -19,10 +19,12 @@ class m implements Plugin{
 		if(is_dir("./plugins/Marriage/".$this->api->getProperty("level-name")) === false){
 			mkdir("./plugins/Marriage/".$this->api->getProperty("level-name"), 0777, true);
 		}
-		$this->createConfig($this, array(
-		//여기에부부목록이랑아기목록써놓도록할수있게... 
-                ));
+		$this->createConfig();
 
+                $this->api->addHandler("player.join", array($this, "eventHandler"));
+                $this->api->addHandler("player.gender", array($this, "eventHandler"));
+
+                $this->api->console->register("couple", "do you know love?", array($this, "handleCommand"));
 		$this->api->console->register("marriage", "command that covers most of the marriage", array($this, "handleCommand"));
                 $this->api->console->alias("accept", "marriage");
                 $this->api->console->alias("decline", "marriage");
@@ -37,6 +39,7 @@ class m implements Plugin{
 	public function handleCommand($cmd, $arg){
 		switch($cmd){
 			case "marriage":
+			switch(//subcommands
 				break;
 				/*
 
