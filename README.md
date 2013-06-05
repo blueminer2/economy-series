@@ -2,4 +2,5 @@ economy-series
 ==============
 hello this repository contains 19+materials
 
-also onebone야해><
+onebone금(19금아니야ㅇㅇ)
+onebone = $this->api->수위높은사람
