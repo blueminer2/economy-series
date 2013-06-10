@@ -4,10 +4,10 @@
  __PocketMine Plugin__
 name=ec0n0my
 description=ec0n0my pluigin is a economy plugin
-version=0.0.2
+version=0.0.3
 author=miner of MCPEKOREA
 class=economy
-apiversion=7
+apiversion=8
 */
 
 define('DEFAULT_MONEY', 100);
