@@ -1,9 +1,8 @@
 economy-series
 ==============
-This repository will contain
 
 
-PM-MP plugins such as...
+This repository contains plugins
 =========
 Life
 
@@ -13,4 +12,5 @@ Department-store
 
 NOTICE
 =========
-You may download it and use it. But you cannot use it for commercial use.
+These plugins are for PocketMine-MP
+Also you may download it and use it. But you cannot use it for commercial use.
