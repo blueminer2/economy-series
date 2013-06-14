@@ -2,22 +2,20 @@ Developers
 ==============
 MMO
 
-(Miner)
-
-(MinecraftJPN)
-
-(Omattyao)
+(Miner)/(MinecraftJPN)/(Omattyao)
 
 
 This repository contains plugins
 =========
-Life
+-Life
 
 
-SignShop
+-SignShop
 
 
-Department-store
+-Department-store
+
+
 
 NOTICE
 =========
