@@ -56,7 +56,7 @@ class life implements Plugin{
 				$this->api->chat->broadcast("[Life]$target is born... please select gender.");
 				$this->api->chat->broadcast("[Life]To select gender, type /choosemale or /choosefemale.");
 				break;
-
+                                 //for this part i used part of the older version of pocketmoney...
 	public function handleCommand($cmd, $arg){
 		switch($cmd){
 			case "marriage":
@@ -65,12 +65,10 @@ class life implements Plugin{
 				/*
 
 
-                                돈핸들러사용법
+                                how to use money.handle
                                 $this->api->handle("money.handle", $d);
-                                이걸써야지돈에서뭐가빠져나가든지생기던지함ㅇㅇ
                                 
-                                예시는...
-                                
+                                for ex)
                                 switch($cmd){
                                   case "buy":
                                   if ($issuer == $cmd){
